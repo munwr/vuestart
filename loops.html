@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Product App</title>
+</head>
+<body>
+  
+  <div id="app">
+    <ol>
+      <li v-for="skill in skills">
+        {{ skill.type }}
+      </li>
+    </ol>
+  </div>
+  
+  <!-- development version, includes helpful console warnings -->
+  <script src="vue.js"></script>
+  <script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+          skills: [
+            {
+              type: "HTML"
+            },
+            {
+              type: "CSS"
+            },
+            {
+              type: "JavaScript"
+            }
+          ]
+        }
+    })
+  </script>
+
+</body>
+</html>

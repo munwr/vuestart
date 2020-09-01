@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Product App</title>
+</head>
+<body>
+  
+  <div id="app">
+    <button v-on:click="toggleMessage">{{ buttonText }}</button>
+    <h1 v-if="seen">{{ message }}</h1>
+  </div>
+  
+  <!-- development version, includes helpful console warnings -->
+  <script src="vue.js"></script>
+  <script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+          seen: true,
+          message: 'Wow you can see me',
+          buttonText: 'Hide message'
+        },
+        methods: {
+          toggleMessage: function(app) {
+            if (this.seen === true ) {
+              this.seen = false
+              this.buttonText = 'Show message'
+            } else {
+              this.seen = true
+              this.buttonText = 'Hide message'
+            }
+          }
+        }
+    })
+  </script>
+
+</body>
+</html>
